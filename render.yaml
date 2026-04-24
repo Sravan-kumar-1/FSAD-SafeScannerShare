@@ -1,5 +1,5 @@
 services:
-  - type: web_service
+  - type: web
     name: docsafesecure-backend
     env: java
     plan: free
@@ -13,8 +13,9 @@ services:
         value: sa
       - key: SPRING_DATASOURCE_PASSWORD
         value: ""
-  - type: static_site
+  - type: web
     name: docsafesecure-frontend
+    env: static
     plan: free
     branch: main
     root: frontend
