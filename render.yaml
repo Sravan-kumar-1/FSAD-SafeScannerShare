@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: web_service
     name: docsafesecure-backend
     env: java
     plan: free
@@ -13,10 +13,8 @@ services:
         value: sa
       - key: SPRING_DATASOURCE_PASSWORD
         value: ""
-  - type: web
-    name: docsafesecure-frontend
-    env: static
-    plan: free
+static_sites:
+  - name: docsafesecure-frontend
     branch: main
     root: frontend
     buildCommand: npm install && npm run build
