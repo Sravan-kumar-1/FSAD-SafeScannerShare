@@ -1,7 +1,7 @@
 services:
-  - type: web
+  - type: web_service
     name: docsafesecure-backend
-    environment: java
+    env: java
     plan: free
     branch: main
     buildCommand: mvn clean package -DskipTests
@@ -13,9 +13,8 @@ services:
         value: sa
       - key: SPRING_DATASOURCE_PASSWORD
         value: ""
-  - type: static
+  - type: static_site
     name: docsafesecure-frontend
-    environment: static
     plan: free
     branch: main
     root: frontend
