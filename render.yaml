@@ -1,0 +1,26 @@
+services:
+  - type: web_service
+    name: docsafesecure-backend
+    env: java
+    plan: free
+    branch: main
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/vault-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:h2:mem:docusafe
+      - key: SPRING_DATASOURCE_USERNAME
+        value: sa
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ""
+  - type: static_site
+    name: docsafesecure-frontend
+    env: static
+    plan: free
+    branch: main
+    root: frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://docsafesecure-backend.onrender.com/api

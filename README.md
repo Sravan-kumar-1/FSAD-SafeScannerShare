@@ -1,5 +1,7 @@
 # 🛡️ DocuSafe: Zero-Trust Document Vault
 
+[![Deploy on Render](https://render.com/images/deploy/button.svg)](https://render.com/deploy?repo=https://github.com/Sravan-kumar-1/FSAD-SafeScannerShare)
+
 DocuSafe is an enterprise-grade, full-stack document sharing application designed with a strict zero-trust architecture. It solves the critical vulnerability of traditional file-sharing platforms by ensuring that sensitive documents are never directly downloaded or exposed via public URLs. 
 
 Instead, files are securely stored, streamed directly into memory, and rendered with dynamic anti-theft mechanics to ensure complete data sovereignty and leak attribution.
